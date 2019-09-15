@@ -1,15 +1,16 @@
 {% extends 'Login/base.html' %}
 {% block content %}
 <body class="hold-transition login-page">
+        {% csrf_token %}
       <div class="login-box">
         <div class="login-logo">
-          <a href="../../index2.html"><b>Admin</b>LTE</a>
+          <a href="#"><b>LeadGen</a>
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
           <p class="login-box-msg">Sign in to start your session</p>
 
-          <form action="../../index2.html" method="post">
+          <form  method="post">
             <div class="form-group has-feedback">
               <input type="email" class="form-control" placeholder="Email">
               <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -29,8 +30,9 @@
           </form>
           <!-- /.social-auth-links -->
           <div class="text-center">
+              <br>
               <a href="#">I forgot my password</a><br>
-              <a href="register.html" class="text-center">Register a new membership</a>
+
 
           </div>
 
