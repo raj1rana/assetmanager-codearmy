@@ -31,15 +31,19 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<div class="alert-danger alert-dismissible">
+
     {% if messages %}
-    <ul style="text-align: center;">
+
         {% for message in messages %}
-          <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+            <div class="alert-{{ message.tags  }} alert-dismissible">
+            <ul style="text-align: center;">
+            <p{% if message.tags %} class="alert-{{ message.tags  }}"{% endif %}>{{ message }}</p>
+              </ul>
+            </div>
         {% endfor %}
-    </ul>
+
     {% endif %}
-</div>
+
 
 {% block content %}{% endblock content %}
 

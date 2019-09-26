@@ -23,5 +23,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('user_login/', include('Login.urls'), name="Login"),
     path('user_logout/', auth_views.LogoutView.as_view(template_name='Login/logout.html'), name='logout'),
-    path('', views.home, name='home')
+    path('', views.home, name='home'),
+    path('user_password-reset/', auth_views.PasswordResetView.as_view(template_name='Login/password_reset.html'),name='user_password_reset'),
+    path('user_password-reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='Login/password_reset_done.html'), name='user_password_reset_done'),
+    path('user_password-reset-confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='Login/password_reset_confirm.html'), name='user_password_reset_confirm'),
+    path('user_password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(template_name='Login/password_reset_complete.html'), name='user_password_reset_complete'),
 ]
